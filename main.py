@@ -1,8 +1,9 @@
-import time, os
+import time, os, sys
 from colorama import init
 from termcolor import colored
 import shutil
 import cursor
+import signal
 
 editing_keys = [('r', 'replace a single character'), ('cc','change (replace) entire line'), ('ciw','change (replace) entire line'),
     ('u','undo'), ('Ctrl+r','redo'), ('.','repeat last command')
@@ -40,6 +41,8 @@ def run():
         time.sleep(sleep_time)
 
 if __name__ == "__main__":
-    cursor.hide()
-    run()
-
+    try:
+        cursor.hide()
+        run()
+    except KeyboardInterrupt:
+        cursor.show()
