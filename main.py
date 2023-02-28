@@ -24,6 +24,10 @@ cut_and_paste_keys = [('yy','yank (copy) a line'), ('2yy','yank (copy) 2 lines')
     ('D','delete (cut) to the end of the line'), ('x','delete (cut) character')
 ]
 
+marking_keys = [('v','start visual mode'), ('V','start linewise visual mode'), ('o','move to other end of marked area'),
+    ('Ctrl+v','start visual block mode'), ('aw','mark a word'), ('y','yank (copy) marked text'), ('d','delete marked text')
+]
+
 def printer(keys, title):
     os.system('clear')
     columns = shutil.get_terminal_size().columns
@@ -33,6 +37,7 @@ def printer(keys, title):
     for lines in range(0, int((lines-(len(keys)*2))/2)):
         print('')
 
+    # print commands and descriptions, in center width
     print(colored(title.center(columns), 'white'))
     for pair in keys:
         spaces = ' '*(75-len(pair[0])-len(pair[1]))
@@ -53,4 +58,5 @@ if __name__ == "__main__":
         cursor.hide()
         run()
     except KeyboardInterrupt:
+        # Make sure cursor is set to visible before exiting
         cursor.show()
