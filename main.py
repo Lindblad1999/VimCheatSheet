@@ -18,6 +18,12 @@ cursor_movement_keys = [('h', 'move cursor left'), ('j', 'move cursor down'),
     ('Ctrl+y', 'move screen up one line(w.o. moving cursor)') 
 ]
 
+cut_and_paste_keys = [('yy','yank (copy) a line'), ('2yy','yank (copy) 2 lines'), ('yiw','yank (copy) the word at cursor'),
+    ('Y','yank (copy) to end of line'), ('p','put (paste) the clipboard after cursor'), ('P','put (paste) before cursor'),
+    ('dd','delete (cut) a line'), ('2dd','delete (cut) 2 lines'), ('diw','delete (cut) the word at cursor'),
+    ('D','delete (cut) to the end of the line'), ('x','delete (cut) character')
+]
+
 def printer(keys, title):
     os.system('clear')
     columns = shutil.get_terminal_size().columns
@@ -33,11 +39,13 @@ def printer(keys, title):
         print(colored(f'{pair[0]}{spaces}{pair[1]}\n'.center(columns), 'white'))
 
 def run():
-    sleep_time = 2
+    sleep_time = 5
     while True:
         printer(cursor_movement_keys, 'CURSOR MOVEMENT')
         time.sleep(sleep_time)
         printer(editing_keys, 'EDITING')
+        time.sleep(sleep_time)
+        printer(cut_and_paste_keys, 'CUT AND PASTE')
         time.sleep(sleep_time)
 
 if __name__ == "__main__":
