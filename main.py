@@ -58,6 +58,14 @@ marking_keys = [
     ('d'     , 'delete marked text')
 ]
 
+custom = [
+    ('Space+pv', ':Ex | Go to explorer'),
+    ('Ctrl+p'  , 'Search git files'),
+    ('Ctrl+e','open harpoon menu'),
+    ('Ctrl+a','add file to harpoon'),
+    ('Ctrl+e','open harpoon menu'),
+]
+
 SLEEP_TIME = 5
 
 def printer(keys, title):
