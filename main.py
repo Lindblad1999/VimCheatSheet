@@ -91,6 +91,10 @@ def run():
         time.sleep(SLEEP_TIME)
         printer(cut_and_paste_keys, 'CUT AND PASTE')
         time.sleep(SLEEP_TIME)
+        printer(marking_keys, 'MARKING')
+        time.sleep(SLEEP_TIME)
+        printer(custom, 'CUSTOM')
+        time.sleep(SLEEP_TIME)
 
 if __name__ == "__main__":
     try:
