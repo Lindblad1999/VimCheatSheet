@@ -8,7 +8,7 @@ import signal
 editing_keys = [
     ('r'     , 'replace a single character'), 
     ('cc'    , 'change (replace) entire line'), 
-    ('ciw'   , 'change (replace) entire line'),
+    ('ciw'   , 'change (replace) word at cursor'),
     ('u'     , 'undo'), 
     ('Ctrl+r', 'redo'), 
     ('.'     , 'repeat last command')
