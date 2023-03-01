@@ -58,6 +58,13 @@ marking_keys = [
     ('d'     , 'delete marked text')
 ]
 
+window_keys = [
+    ('Ctrl+wv', 'split screen'), 
+    ('Ctrl+ws', 'split screen horizontal'),
+    ('Ctrl+wh', 'move to the window on the left'),
+    ('Ctrl+wq', 'close current window')
+]
+
 custom = [
     ('Space+pv', ':Ex | Go to explorer'),
     ('Ctrl+p'  , 'Search git files'),
